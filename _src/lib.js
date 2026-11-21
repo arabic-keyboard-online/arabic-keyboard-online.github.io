@@ -322,6 +322,7 @@ function pageShell(page, body, extraHead = '', noindex = false) {
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
 ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">'}
+<meta name="google-site-verification" content="RMv-lW0-4YXFmUzBtuvWEiyUNZASOk26NkPzUZ0ZRiA">
 <meta name="author" content="${SITE.name}">
 <meta name="theme-color" content="${SITE.theme}">
 <meta property="og:type" content="website">
