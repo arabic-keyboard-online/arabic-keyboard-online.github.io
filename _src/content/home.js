@@ -53,7 +53,7 @@ const article = `
   <li>Type with the on-screen keys, or use your own keyboard. In layout mode, the letters on your physical keys produce Arabic characters.</li>
   <li>Add harakat from the gold row when you need vocalization, then press <strong>Copy</strong> and paste the result into any app.</li>
 </ol>
-<p>The character counter under the editor updates as you type, so you always know how much text you have before pasting it into a field with a limit.</p>
+<p>The character counter under the editor updates as you type, so you always know how much text you have before pasting it into a field with a limit. Once the basics feel comfortable, you can measure your progress with an <a href="https://www.clavier-arabe.org/en/p/test-dactylographie-arabe.html">Arabic typing test</a>.</p>
 
 <h2 id="typing-modes">Three typing modes for three habits</h2>
 <p>People arrive at an Arabic keyboard from very different starting points. The mode selector covers all three.</p>
@@ -146,7 +146,7 @@ module.exports = {
   appName: 'Arabic Keyboard Online',
   lede: 'Type Arabic in your browser with a full keyboard, Arabizi transliteration, and harakat support.',
   published: '2026-10-02',
-  modified: '2026-11-17',
+  modified: '2026-11-18',
   keywords: ['Arabic keyboard', 'Arabic keyboard online', 'type Arabic', 'Arabizi keyboard', 'Arabic typing'],
   ui,
   scripts: ['keyboard.js', 'keyboards/arabic.js'],
