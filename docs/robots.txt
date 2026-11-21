@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arabic-keyboard-online.github.io/sitemap.xml

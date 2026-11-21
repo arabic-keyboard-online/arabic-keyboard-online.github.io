@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arabic Word Frequency Counter – Find Repeated Words</title>
+<meta name="description" content="Count repeated Arabic words and rank them by frequency. Ignore stop words, filter short tokens, and copy a clean TSV table for editing or analysis.">
+<link rel="canonical" href="https://arabic-keyboard-online.github.io/arabic-word-frequency/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Arabic Keyboard Online">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arabic Keyboard Online">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Arabic Word Frequency Counter – Find Repeated Words">
+<meta property="og:description" content="Count repeated Arabic words and rank them by frequency. Ignore stop words, filter short tokens, and copy a clean TSV table for editing or analysis.">
+<meta property="og:url" content="https://arabic-keyboard-online.github.io/arabic-word-frequency/">
+<meta property="og:image" content="https://arabic-keyboard-online.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arabic Keyboard Online – free Arabic typing and text tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arabic Word Frequency Counter – Find Repeated Words">
+<meta name="twitter:description" content="Count repeated Arabic words and rank them by frequency. Ignore stop words, filter short tokens, and copy a clean TSV table for editing or analysis.">
+<meta name="twitter:image" content="https://arabic-keyboard-online.github.io/assets/img/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://arabic-keyboard-online.github.io/#org",
+      "name": "Arabic Keyboard Online",
+      "url": "https://arabic-keyboard-online.github.io/",
+      "logo": "https://arabic-keyboard-online.github.io/assets/img/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://arabic-keyboard-online.github.io/#website",
+      "url": "https://arabic-keyboard-online.github.io/",
+      "name": "Arabic Keyboard Online",
+      "description": "Free Arabic typing and text tools that run in your browser.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://arabic-keyboard-online.github.io/#org"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-word-frequency/#app",
+      "name": "Word Frequency Counter",
+      "url": "https://arabic-keyboard-online.github.io/arabic-word-frequency/",
+      "description": "Count repeated Arabic words and rank them by frequency. Ignore stop words, filter short tokens, and copy a clean TSV table for editing or analysis.",
+      "applicationCategory": "UtilitiesApplication",
+      "applicationSubCategory": "Text and language tools",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-10-03",
+      "dateModified": "2026-11-01",
+      "isPartOf": {
+        "@id": "https://arabic-keyboard-online.github.io/#website"
+      },
+      "publisher": {
+        "@id": "https://arabic-keyboard-online.github.io/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-word-frequency/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What counts as a word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A run of Arabic letters or Latin letters. Punctuation and symbols separate tokens. Harakat and tatweel are removed before counting, so vocalized and plain spellings merge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are stop words in Arabic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "They are common function words such as في, من, على, هذا, and كان. The filter removes a practical list so content words rise to the top of the ranking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it find the root of each word?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It groups exact normalized tokens. Related forms such as يكتب and كتب remain separate. Root analysis requires a linguistic stemmer, not a frequency counter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are some short words missing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The minimum length filter defaults to two characters. Lower it to one if you want to include single-letter words, or raise it to focus on longer terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I export the results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Copy table as TSV places the visible top 100 on the clipboard in a format that pastes cleanly into a spreadsheet."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-word-frequency/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://arabic-keyboard-online.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://arabic-keyboard-online.github.io/#tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Word Frequency Counter",
+          "item": "https://arabic-keyboard-online.github.io/arabic-word-frequency/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body class="page-tool">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Arabic Keyboard Online home">
+        <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg></span>
+        <span class="brand-text">Arabic<b>Keyboard</b><span class="brand-dot">.online</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <div class="menu-anchor">
+          <button class="nav-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="tools-menu">
+            All tools <svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+        <a href="/#guide">Typing guide</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="tools-menu" id="tools-menu" data-tools-menu hidden>
+    <div class="tools-menu-inner">
+      <div class="tools-menu-grid"><div class="menu-group">
+      <p class="menu-title">Keyboards</p>
+      <a href="/darija-keyboard/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.5 5-5 2.5 2.5-5 5-2.5Z"/></svg><span>Darija Keyboard</span></a><a href="/persian-keyboard/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg><span>Persian Keyboard</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Clean &amp; fix</p>
+      <a href="/arabic-text-cleaner/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14 4 6 6M12.5 8.5 4 17v3h3l8.5-8.5M13 7l4 4M7 14l3 3M5 21h11"/></svg><span>Arabic Text Cleaner</span></a><a href="/arabic-punctuation-converter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4"/></svg><span>Punctuation Converter</span></a><a href="/photoshop-text-fixer/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14ZM5 3l.6 1.4L7 5l-1.4.6L5 7l-.6-1.4L3 5l1.4-.6L5 3Z"/></svg><span>Photoshop Text Fixer</span></a><a href="/arabic-harakat-remover/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 21-4-4L14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L11 21H7Z"/><path d="M11 21h10"/></svg><span>Harakat Remover</span></a><a href="/arabic-tatweel-stretcher/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg><span>Tatweel Stretcher</span></a><a href="/find-and-replace/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Find and Replace</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Convert</p>
+      <a href="/tafqit/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg><span>Tafqit Converter</span></a><a href="/arabic-braille-translator/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7" cy="5" r="1.3"/><circle cx="7" cy="12" r="1.3"/><circle cx="7" cy="19" r="1.3"/><circle cx="17" cy="5" r="1.3"/><circle cx="17" cy="12" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg><span>Arabic Braille Translator</span></a><a href="/arabic-numerals-converter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg><span>Arabic Numerals Converter</span></a><a href="/arabic-url-encoder/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Arabic URL Encoder</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Analyze</p>
+      <a href="/alphabetical-sorter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h11M3 12h8M3 19h5M17 4v16M17 20l-3-3M17 20l3-3"/></svg><span>Arabic Alphabetical Sorter</span></a><a href="/arabic-text-extractor/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg><span>Arabic Text Extractor</span></a><a href="/arabic-word-counter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg><span>Word and Character Counter</span></a><a href="/arabic-word-frequency/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg><span>Word Frequency Counter</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Generate &amp; listen</p>
+      <a href="/arabic-lorem-ipsum/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span>Arabic Lorem Ipsum</span></a><a href="/arabic-text-to-speech/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg><span>Arabic Text to Speech</span></a>
+    </div></div>
+      <div class="tools-menu-foot">
+        <span>Every tool runs locally in your browser.</span>
+        <a href="/#tools">See all 18 tools <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+      <div class="container">
+        <div class="mobile-links">
+          <a href="/">Home</a>
+          <a href="/#guide">Typing guide</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/privacy/">Privacy</a>
+        </div>
+        <div class="mobile-group"><p>Keyboards</p><div class="mobile-group-links"><a href="/darija-keyboard/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.5 5-5 2.5 2.5-5 5-2.5Z"/></svg>Darija Keyboard</a><a href="/persian-keyboard/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg>Persian Keyboard</a></div></div><div class="mobile-group"><p>Clean &amp; fix</p><div class="mobile-group-links"><a href="/arabic-text-cleaner/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14 4 6 6M12.5 8.5 4 17v3h3l8.5-8.5M13 7l4 4M7 14l3 3M5 21h11"/></svg>Arabic Text Cleaner</a><a href="/arabic-punctuation-converter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4"/></svg>Punctuation Converter</a><a href="/photoshop-text-fixer/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14ZM5 3l.6 1.4L7 5l-1.4.6L5 7l-.6-1.4L3 5l1.4-.6L5 3Z"/></svg>Photoshop Text Fixer</a><a href="/arabic-harakat-remover/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 21-4-4L14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L11 21H7Z"/><path d="M11 21h10"/></svg>Harakat Remover</a><a href="/arabic-tatweel-stretcher/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg>Tatweel Stretcher</a><a href="/find-and-replace/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Find and Replace</a></div></div><div class="mobile-group"><p>Convert</p><div class="mobile-group-links"><a href="/tafqit/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>Tafqit Converter</a><a href="/arabic-braille-translator/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7" cy="5" r="1.3"/><circle cx="7" cy="12" r="1.3"/><circle cx="7" cy="19" r="1.3"/><circle cx="17" cy="5" r="1.3"/><circle cx="17" cy="12" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>Arabic Braille Translator</a><a href="/arabic-numerals-converter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>Arabic Numerals Converter</a><a href="/arabic-url-encoder/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Arabic URL Encoder</a></div></div><div class="mobile-group"><p>Analyze</p><div class="mobile-group-links"><a href="/alphabetical-sorter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h11M3 12h8M3 19h5M17 4v16M17 20l-3-3M17 20l3-3"/></svg>Arabic Alphabetical Sorter</a><a href="/arabic-text-extractor/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg>Arabic Text Extractor</a><a href="/arabic-word-counter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg>Word and Character Counter</a><a href="/arabic-word-frequency/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>Word Frequency Counter</a></div></div><div class="mobile-group"><p>Generate &amp; listen</p><div class="mobile-group-links"><a href="/arabic-lorem-ipsum/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Arabic Lorem Ipsum</a><a href="/arabic-text-to-speech/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>Arabic Text to Speech</a></div></div>
+      </div>
+    </div>
+  </header>
+<main id="main">
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#tools">Tools</a></li>
+      <li aria-current="page">Word Frequency Counter</li>
+    </ol>
+  </nav>
+  <section class="tool-band">
+    <div class="container">
+      <article class="tool-card">
+        <header class="tool-head">
+          <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg> Find repeated Arabic words</p>
+          <h1>Arabic word frequency counter</h1>
+          <p class="lede">See which Arabic words dominate a text, with counts, shares, and a stop-word filter that removes the noise.</p>
+        </header>
+        
+<div class="field">
+  <label for="inputBox">Arabic text to analyze</label>
+  <textarea class="editor editor--ar editor--tall" id="inputBox" dir="rtl" lang="ar" spellcheck="false" placeholder="الصق عدة فقرات لتحليل الكلمات المتكررة…"></textarea>
+</div>
+<fieldset class="options">
+  <legend>Analysis options</legend>
+  <label class="check"><input type="checkbox" id="ignoreStopWords" checked> Ignore common function words</label>
+  <div class="field">
+    <label for="minLength">Minimum word length</label>
+    <input class="input" id="minLength" type="number" min="1" max="8" value="2" inputmode="numeric" style="max-width:120px">
+  </div>
+</fieldset>
+<div class="stats-grid">
+  <div class="stat"><span class="stat-value" id="totalWords">0</span><span class="stat-label">Words analyzed</span></div>
+  <div class="stat"><span class="stat-value" id="uniqueWords">0</span><span class="stat-label">Unique words</span></div>
+</div>
+<div class="result-card">
+  <div class="result-card-head"><span>Most frequent words</span><span class="meta" id="freqStatus" role="status" aria-live="polite"></span></div>
+  <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>#</th><th>Word</th><th>Count</th><th>Share</th></tr></thead>
+      <tbody id="freqBody"></tbody>
+    </table>
+  </div>
+</div>
+<div class="toolbar">
+  <button class="btn btn-outline" type="button" data-action="copy">Copy table as TSV</button>
+  <button class="btn btn-ghost" type="button" data-action="clear">Clear</button>
+</div>
+        <p class="privacy-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Everything runs locally in your browser. Nothing is uploaded to a server.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container content-layout">
+    <article class="prose" id="guide">
+      
+<p>Word frequency is a simple measurement with many uses. It shows what a text is really about, reveals repetition in a translation, helps build a vocabulary list, and catches a keyword that was overused in an article. In Arabic, frequency analysis has an extra wrinkle: the same word can carry different diacritics, and common particles make up a large share of every page.</p>
+<p>This counter normalizes harakat, ignores tatweel, lowercases Latin tokens, and can filter a list of common Arabic function words. The result is a ranked table with a count and a percentage share, updated as you type.</p>
+
+<h2 id="how-it-works">How the analysis works</h2>
+<ol>
+  <li>The text is split into Arabic and Latin tokens. Punctuation and symbols separate tokens but are not counted.</li>
+  <li>Harakat and tatweel are removed so <span class="ar-inline">كِتَاب</span> and <span class="ar-inline">كتاب</span> count as the same word.</li>
+  <li>Tokens shorter than the minimum length are skipped. The default is two characters, which drops single-letter particles.</li>
+  <li>If the stop-word filter is on, common words such as <span class="ar-inline">في</span>, <span class="ar-inline">من</span>, <span class="ar-inline">على</span>, and <span class="ar-inline">هذا</span> are ignored.</li>
+  <li>The remaining tokens are grouped, counted, and sorted by count, then alphabetically for ties.</li>
+</ol>
+<p>The table shows the top 100 words. The two counters above it report how many tokens were analyzed and how many unique words were found.</p>
+
+<h2 id="stop-words">Should you ignore stop words?</h2>
+<p>Stop words are the glue of a language: prepositions, pronouns, conjunctions, and demonstratives. In a long Arabic text they often occupy the top of the frequency list, which hides the content words you care about. The filter removes a practical list of these particles and leaves nouns, verbs, and adjectives.</p>
+<p>For a keyword analysis, leave the filter on. For a readability or style study, turn it off and look at the full distribution. For a language-learning list, a middle ground works better: keep the filter on but lower the minimum length to one, so short content words are not lost.</p>
+
+<h2 id="normalization">Normalization choices</h2>
+<p>The counter strips harakat but does not lemmatize. <span class="ar-inline">يكتب</span>, <span class="ar-inline">كتب</span>, and <span class="ar-inline">الكتاب</span> are different entries even though they share a root. Stemming Arabic is a linguistic task with real trade-offs, and a simple tool that pretends to do it would mislead more than it helps. If you need root analysis, export the table and process it with a dedicated Arabic NLP library.</p>
+<p>Latin case is normalized, so <code>Arabic</code> and <code>arabic</code> merge. Arabic has no case, so nothing else changes.</p>
+
+<h2 id="uses">Practical uses</h2>
+<ul>
+  <li>Check whether a keyword appears often enough in an article, and whether a synonym is used more.</li>
+  <li>Find accidental repetition in a translation or a student essay.</li>
+  <li>Build a vocabulary list from a short story or a news corpus.</li>
+  <li>Compare two drafts by pasting each one and noting the top words.</li>
+  <li>Prepare data for a word cloud or a search index.</li>
+</ul>
+
+<h2 id="copy">Copying the table</h2>
+<p>Press <strong>Copy table as TSV</strong> to put the ranking, word, count, and share on the clipboard as tab-separated values. Paste it into Excel, Google Sheets, or a script. The table is generated locally; nothing is uploaded.</p>
+      <div class="article-dates">
+    <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Published <time datetime="2026-10-03">October 3, 2026</time></span>
+    <span>Updated <time datetime="2026-11-01">November 1, 2026</time></span>
+  </div>
+    </article>
+    <aside class="toc" aria-label="On this page">
+    <p class="toc-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg> On this page</p>
+    <ol><li><a href="#how-it-works">How the analysis works</a></li><li><a href="#stop-words">Should you ignore stop words?</a></li><li><a href="#normalization">Normalization choices</a></li><li><a href="#uses">Practical uses</a></li><li><a href="#copy">Copying the table</a></li></ol>
+  </aside>
+  </section>
+
+  <div class="container">
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="section-heading">
+      <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg> Quick answers</p>
+      <h2 id="faq-title">Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span>What counts as a word?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>A run of Arabic letters or Latin letters. Punctuation and symbols separate tokens. Harakat and tatweel are removed before counting, so vocalized and plain spellings merge.</p></div>
+      </details><details class="faq-item">
+        <summary><span>What are stop words in Arabic?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>They are common function words such as في, من, على, هذا, and كان. The filter removes a practical list so content words rise to the top of the ranking.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Does it find the root of each word?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>No. It groups exact normalized tokens. Related forms such as يكتب and كتب remain separate. Root analysis requires a linguistic stemmer, not a frequency counter.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Why are some short words missing?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>The minimum length filter defaults to two characters. Lower it to one if you want to include single-letter words, or raise it to focus on longer terms.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Can I export the results?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>Yes. Copy table as TSV places the visible top 100 on the clipboard in a format that pastes cleanly into a spreadsheet.</p></div>
+      </details>
+    </div>
+  </section>
+    <section class="related-section" aria-labelledby="related-title">
+    <div class="section-heading">
+      <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Keep going</p>
+      <h2 id="related-title">Related Arabic tools</h2>
+    </div>
+    <div class="tool-grid tool-grid--related">
+      <a class="tool-tile" href="/arabic-word-counter/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Word and Character Counter</span>
+      <span class="tool-tile-desc">Live counts for characters, words, sentences, and reading time.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a><a class="tool-tile" href="/alphabetical-sorter/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h11M3 12h8M3 19h5M17 4v16M17 20l-3-3M17 20l3-3"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Arabic Alphabetical Sorter</span>
+      <span class="tool-tile-desc">Sort Arabic lines with proper collation and optional dedupe.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a><a class="tool-tile" href="/arabic-text-extractor/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Arabic Text Extractor</span>
+      <span class="tool-tile-desc">Strip Latin, symbols, and noise; keep only Arabic content.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a>
+    </div>
+  </section>
+  </div>
+</main>
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg></span>
+          <span class="brand-text">Arabic<b>Keyboard</b></span>
+        </a>
+        <p>Free Arabic typing and text tools that run in your browser.</p>
+        <p class="footer-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Your text never leaves your device.</p>
+      </div>
+      <div class="footer-col">
+    <p class="footer-title">Keyboards</p>
+    <a href="/darija-keyboard/">Darija Keyboard</a><a href="/persian-keyboard/">Persian Keyboard</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Clean &amp; fix</p>
+    <a href="/arabic-text-cleaner/">Arabic Text Cleaner</a><a href="/arabic-punctuation-converter/">Punctuation Converter</a><a href="/photoshop-text-fixer/">Photoshop Text Fixer</a><a href="/arabic-harakat-remover/">Harakat Remover</a><a href="/arabic-tatweel-stretcher/">Tatweel Stretcher</a><a href="/find-and-replace/">Find and Replace</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Convert</p>
+    <a href="/tafqit/">Tafqit Converter</a><a href="/arabic-braille-translator/">Arabic Braille Translator</a><a href="/arabic-numerals-converter/">Arabic Numerals Converter</a><a href="/arabic-url-encoder/">Arabic URL Encoder</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Analyze</p>
+    <a href="/alphabetical-sorter/">Arabic Alphabetical Sorter</a><a href="/arabic-text-extractor/">Arabic Text Extractor</a><a href="/arabic-word-counter/">Word and Character Counter</a><a href="/arabic-word-frequency/">Word Frequency Counter</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Generate &amp; listen</p>
+    <a href="/arabic-lorem-ipsum/">Arabic Lorem Ipsum</a><a href="/arabic-text-to-speech/">Arabic Text to Speech</a>
+  </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Arabic Keyboard Online. Free to use.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/#tools">All tools</a>
+      </div>
+    </div>
+  </footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/tools/frequency.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: 1200px 630px; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; margin: 0; }
+  body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #f7f2e7;
+    color: #16211d;
+    overflow: hidden;
+    position: relative;
+  }
+  .glow-a { position: absolute; width: 620px; height: 620px; border-radius: 50%; left: -220px; top: -260px; background: radial-gradient(circle, rgba(15,118,110,.16), transparent 65%); }
+  .glow-b { position: absolute; width: 560px; height: 560px; border-radius: 50%; right: -180px; bottom: -260px; background: radial-gradient(circle, rgba(226,176,74,.22), transparent 65%); }
+  .wrap { position: relative; height: 100%; padding: 54px 64px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark { width: 54px; height: 54px; border-radius: 15px; background: linear-gradient(150deg, #12897f, #084a44); display: grid; place-items: center; box-shadow: 0 8px 18px rgba(8,74,68,.25); }
+  .mark span { color: #f2d391; font-size: 30px; font-weight: 700; line-height: 1; }
+  .brand-name { font-size: 25px; font-weight: 700; letter-spacing: -.02em; color: #24433d; }
+  .brand-name b { color: #0f766e; }
+  .brand-name small { color: #8b8474; font-weight: 600; }
+  .main { flex: 1; display: grid; grid-template-columns: 1.12fr .88fr; gap: 40px; align-items: center; }
+  .eyebrow { margin: 0 0 16px; color: #0f766e; font-size: 18px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { margin: 0; font-size: 86px; line-height: .98; letter-spacing: -.045em; font-weight: 800; color: #16211d; }
+  h1 span { display: block; margin-top: 14px; font-size: 36px; line-height: 1.18; letter-spacing: -.02em; color: #0f766e; font-weight: 600; }
+  .lede { margin: 24px 0 0; max-width: 560px; font-size: 22px; line-height: 1.5; color: #4d5c57; }
+  .badges { display: flex; gap: 10px; margin-top: 30px; }
+  .badge { padding: 9px 16px; border-radius: 999px; border: 1px solid #cfc4ae; background: rgba(255,255,255,.72); color: #3e4a45; font-size: 16px; font-weight: 700; }
+  .badge.gold { background: #fbf0d6; border-color: #e2c98f; color: #6f4c0e; }
+  .art { position: relative; }
+  .card { background: #fffdf8; border: 1px solid #d8cdb8; border-radius: 26px; padding: 22px 22px 18px; box-shadow: 0 30px 60px -30px rgba(22,33,29,.45), 0 2px 0 #fff inset; transform: rotate(-2deg); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 9px; height: 9px; border-radius: 50%; background: #d8cdb8; display: block; }
+  .dots i:first-child { background: #e2b04a; }
+  .card-title { font-size: 14px; font-weight: 700; color: #8b8474; letter-spacing: .04em; }
+  .keys { display: grid; grid-template-columns: repeat(8, 1fr); gap: 8px; direction: rtl; }
+  .key { height: 54px; border-radius: 10px; border: 1px solid #d8cdb8; border-bottom-width: 3px; background: linear-gradient(180deg, #fffefb, #f4edde); display: grid; place-items: center; font-size: 25px; color: #16211d; font-family: "Segoe UI", Tahoma, sans-serif; }
+  .key.gold { background: linear-gradient(180deg, #fbf1dc, #f2dfb9); border-color: #e2c98f; color: #6f4c0e; }
+  .key.wide { grid-column: span 2; }
+  .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 13px; border-top: 1px solid #eee5d4; font-size: 13px; color: #8b8474; font-weight: 600; }
+  .cursor { width: 2px; height: 18px; background: #0f766e; }
+  .float { position: absolute; width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; font-family: "Segoe UI", Tahoma, sans-serif; font-size: 32px; font-weight: 700; box-shadow: 0 16px 30px -16px rgba(22,33,29,.4); }
+  .float.one { right: -16px; top: -26px; background: #0f766e; color: #f6e7c8; transform: rotate(9deg); }
+  .float.two { left: -22px; bottom: 34px; background: #e2b04a; color: #5a3d08; transform: rotate(-8deg); }
+  .foot { display: flex; align-items: center; justify-content: space-between; margin-top: 26px; padding-top: 18px; border-top: 1px solid #e2d9c8; font-size: 17px; color: #6f7a75; font-weight: 600; }
+  .foot b { color: #0f766e; }
+</style>
+</head>
+<body>
+  <div class="glow-a"></div>
+  <div class="glow-b"></div>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark"><span>ض</span></div>
+      <div class="brand-name">Arabic<b>Keyboard</b><small>.online</small></div>
+    </div>
+    <div class="main">
+      <div>
+        <p class="eyebrow">Free Arabic typing &amp; text tools</p>
+        <h1>Arabic Keyboard<span>for fast, accurate typing</span></h1>
+        <p class="lede">Type in Arabic, convert Arabizi, clean text, count words, and fix design files — 18 tools that run in your browser.</p>
+        <div class="badges">
+          <span class="badge gold">No installation</span>
+          <span class="badge">Private by design</span>
+          <span class="badge">Free to use</span>
+        </div>
+      </div>
+      <div class="art">
+        <div class="float one">ع</div>
+        <div class="float two">؟</div>
+        <div class="card">
+          <div class="card-top"><div class="dots"><i></i><i></i><i></i></div><span class="card-title">لوحة المفاتيح العربية</span></div>
+          <div class="keys">
+            <span class="key">ض</span><span class="key">ص</span><span class="key">ث</span><span class="key">ق</span><span class="key">ف</span><span class="key">غ</span><span class="key">ع</span><span class="key">ه</span>
+            <span class="key">ش</span><span class="key">س</span><span class="key">ي</span><span class="key">ب</span><span class="key">ل</span><span class="key">ا</span><span class="key">ت</span><span class="key">ن</span>
+            <span class="key">ئ</span><span class="key">ء</span><span class="key">ؤ</span><span class="key">ر</span><span class="key">لا</span><span class="key">ى</span><span class="key">ة</span><span class="key">و</span>
+            <span class="key gold">َ</span><span class="key gold">ِ</span><span class="key gold">ُ</span><span class="key gold">ّ</span><span class="key wide">مسافة</span><span class="key">Enter</span>
+          </div>
+          <div class="card-foot"><span>ابدأ الكتابة بالعربية</span><span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Arabic typing, cleaning, converting and analysis in one place.</span><span><b>arabic-keyboard-online.github.io</b></span></div>
+  </div>
+</body>
+</html>

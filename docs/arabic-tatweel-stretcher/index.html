@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arabic Tatweel Stretcher – Add or Remove Kashida Online</title>
+<meta name="description" content="Add or remove Arabic tatweel (kashida) to justify headings and balance lines. Choose one, three, or five marks, with valid letter joins only.">
+<link rel="canonical" href="https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Arabic Keyboard Online">
+<meta name="theme-color" content="#0f766e">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Arabic Keyboard Online">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Arabic Tatweel Stretcher – Add or Remove Kashida Online">
+<meta property="og:description" content="Add or remove Arabic tatweel (kashida) to justify headings and balance lines. Choose one, three, or five marks, with valid letter joins only.">
+<meta property="og:url" content="https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/">
+<meta property="og:image" content="https://arabic-keyboard-online.github.io/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Arabic Keyboard Online – free Arabic typing and text tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arabic Tatweel Stretcher – Add or Remove Kashida Online">
+<meta name="twitter:description" content="Add or remove Arabic tatweel (kashida) to justify headings and balance lines. Choose one, three, or five marks, with valid letter joins only.">
+<meta name="twitter:image" content="https://arabic-keyboard-online.github.io/assets/img/og-image.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/img/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://arabic-keyboard-online.github.io/#org",
+      "name": "Arabic Keyboard Online",
+      "url": "https://arabic-keyboard-online.github.io/",
+      "logo": "https://arabic-keyboard-online.github.io/assets/img/icon-512.png"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://arabic-keyboard-online.github.io/#website",
+      "url": "https://arabic-keyboard-online.github.io/",
+      "name": "Arabic Keyboard Online",
+      "description": "Free Arabic typing and text tools that run in your browser.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://arabic-keyboard-online.github.io/#org"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/#app",
+      "name": "Tatweel Stretcher",
+      "url": "https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/",
+      "description": "Add or remove Arabic tatweel (kashida) to justify headings and balance lines. Choose one, three, or five marks, with valid letter joins only.",
+      "applicationCategory": "UtilitiesApplication",
+      "applicationSubCategory": "Text and language tools",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "inLanguage": "en",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-11-05",
+      "isPartOf": {
+        "@id": "https://arabic-keyboard-online.github.io/#website"
+      },
+      "publisher": {
+        "@id": "https://arabic-keyboard-online.github.io/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is tatweel or kashida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is the horizontal line that stretches the connection between two Arabic letters. In Unicode it is U+0640. Typographers use it to justify lines and balance short headings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are some letters not stretched?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Letters such as ا, د, ذ, ر, ز, and و do not connect to the following letter. Inserting kashida after them would break the word, so the tool skips those positions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I remove existing tatweel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Choose Remove kashida. Every U+0640 character is deleted while letters, harakat, and punctuation remain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the tool preserve harakat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Marks stay attached to their letter, and the kashida is inserted after them so the vowel is not separated from the consonant."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is manual kashida good for body text?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. Use the justification engine of your layout program for paragraphs. Manual kashida is best for short headings, logos, and deliberate display typography."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://arabic-keyboard-online.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://arabic-keyboard-online.github.io/#tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tatweel Stretcher",
+          "item": "https://arabic-keyboard-online.github.io/arabic-tatweel-stretcher/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</head>
+<body class="page-tool">
+<a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/" aria-label="Arabic Keyboard Online home">
+        <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg></span>
+        <span class="brand-text">Arabic<b>Keyboard</b><span class="brand-dot">.online</span></span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <div class="menu-anchor">
+          <button class="nav-menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="tools-menu">
+            All tools <svg class="icon chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+        </div>
+        <a href="/#guide">Typing guide</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <svg class="icon icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="tools-menu" id="tools-menu" data-tools-menu hidden>
+    <div class="tools-menu-inner">
+      <div class="tools-menu-grid"><div class="menu-group">
+      <p class="menu-title">Keyboards</p>
+      <a href="/darija-keyboard/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.5 5-5 2.5 2.5-5 5-2.5Z"/></svg><span>Darija Keyboard</span></a><a href="/persian-keyboard/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg><span>Persian Keyboard</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Clean &amp; fix</p>
+      <a href="/arabic-text-cleaner/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14 4 6 6M12.5 8.5 4 17v3h3l8.5-8.5M13 7l4 4M7 14l3 3M5 21h11"/></svg><span>Arabic Text Cleaner</span></a><a href="/arabic-punctuation-converter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4"/></svg><span>Punctuation Converter</span></a><a href="/photoshop-text-fixer/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14ZM5 3l.6 1.4L7 5l-1.4.6L5 7l-.6-1.4L3 5l1.4-.6L5 3Z"/></svg><span>Photoshop Text Fixer</span></a><a href="/arabic-harakat-remover/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 21-4-4L14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L11 21H7Z"/><path d="M11 21h10"/></svg><span>Harakat Remover</span></a><a href="/arabic-tatweel-stretcher/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg><span>Tatweel Stretcher</span></a><a href="/find-and-replace/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Find and Replace</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Convert</p>
+      <a href="/tafqit/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg><span>Tafqit Converter</span></a><a href="/arabic-braille-translator/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7" cy="5" r="1.3"/><circle cx="7" cy="12" r="1.3"/><circle cx="7" cy="19" r="1.3"/><circle cx="17" cy="5" r="1.3"/><circle cx="17" cy="12" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg><span>Arabic Braille Translator</span></a><a href="/arabic-numerals-converter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg><span>Arabic Numerals Converter</span></a><a href="/arabic-url-encoder/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg><span>Arabic URL Encoder</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Analyze</p>
+      <a href="/alphabetical-sorter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h11M3 12h8M3 19h5M17 4v16M17 20l-3-3M17 20l3-3"/></svg><span>Arabic Alphabetical Sorter</span></a><a href="/arabic-text-extractor/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg><span>Arabic Text Extractor</span></a><a href="/arabic-word-counter/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg><span>Word and Character Counter</span></a><a href="/arabic-word-frequency/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg><span>Word Frequency Counter</span></a>
+    </div><div class="menu-group">
+      <p class="menu-title">Generate &amp; listen</p>
+      <a href="/arabic-lorem-ipsum/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span>Arabic Lorem Ipsum</span></a><a href="/arabic-text-to-speech/"><svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg><span>Arabic Text to Speech</span></a>
+    </div></div>
+      <div class="tools-menu-foot">
+        <span>Every tool runs locally in your browser.</span>
+        <a href="/#tools">See all 18 tools <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+      <div class="container">
+        <div class="mobile-links">
+          <a href="/">Home</a>
+          <a href="/#guide">Typing guide</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/privacy/">Privacy</a>
+        </div>
+        <div class="mobile-group"><p>Keyboards</p><div class="mobile-group-links"><a href="/darija-keyboard/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.5 5-5 2.5 2.5-5 5-2.5Z"/></svg>Darija Keyboard</a><a href="/persian-keyboard/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg>Persian Keyboard</a></div></div><div class="mobile-group"><p>Clean &amp; fix</p><div class="mobile-group-links"><a href="/arabic-text-cleaner/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14 4 6 6M12.5 8.5 4 17v3h3l8.5-8.5M13 7l4 4M7 14l3 3M5 21h11"/></svg>Arabic Text Cleaner</a><a href="/arabic-punctuation-converter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4M20 11h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6c0 2-1.5 3.5-4 4"/></svg>Punctuation Converter</a><a href="/photoshop-text-fixer/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14ZM5 3l.6 1.4L7 5l-1.4.6L5 7l-.6-1.4L3 5l1.4-.6L5 3Z"/></svg>Photoshop Text Fixer</a><a href="/arabic-harakat-remover/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 21-4-4L14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L11 21H7Z"/><path d="M11 21h10"/></svg>Harakat Remover</a><a href="/arabic-tatweel-stretcher/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg>Tatweel Stretcher</a><a href="/find-and-replace/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Find and Replace</a></div></div><div class="mobile-group"><p>Convert</p><div class="mobile-group-links"><a href="/tafqit/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg>Tafqit Converter</a><a href="/arabic-braille-translator/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="7" cy="5" r="1.3"/><circle cx="7" cy="12" r="1.3"/><circle cx="7" cy="19" r="1.3"/><circle cx="17" cy="5" r="1.3"/><circle cx="17" cy="12" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>Arabic Braille Translator</a><a href="/arabic-numerals-converter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>Arabic Numerals Converter</a><a href="/arabic-url-encoder/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>Arabic URL Encoder</a></div></div><div class="mobile-group"><p>Analyze</p><div class="mobile-group-links"><a href="/alphabetical-sorter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h11M3 12h8M3 19h5M17 4v16M17 20l-3-3M17 20l3-3"/></svg>Arabic Alphabetical Sorter</a><a href="/arabic-text-extractor/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3Z"/></svg>Arabic Text Extractor</a><a href="/arabic-word-counter/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg>Word and Character Counter</a><a href="/arabic-word-frequency/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 3v18h18"/><path d="M7 15v3M12 10v8M17 6v12"/></svg>Word Frequency Counter</a></div></div><div class="mobile-group"><p>Generate &amp; listen</p><div class="mobile-group-links"><a href="/arabic-lorem-ipsum/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Arabic Lorem Ipsum</a><a href="/arabic-text-to-speech/"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H2v6h4l5 4V5Z"/><path d="M15 9a4 4 0 0 1 0 6M18 6a8 8 0 0 1 0 12"/></svg>Arabic Text to Speech</a></div></div>
+      </div>
+    </div>
+  </header>
+<main id="main">
+  <nav class="breadcrumbs container" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#tools">Tools</a></li>
+      <li aria-current="page">Tatweel Stretcher</li>
+    </ol>
+  </nav>
+  <section class="tool-band">
+    <div class="container">
+      <article class="tool-card">
+        <header class="tool-head">
+          <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4"/></svg> Justify Arabic the old way</p>
+          <h1>Arabic tatweel and kashida tool</h1>
+          <p class="lede">Stretch Arabic words with valid kashida joins, or strip every tatweel character from text that already has too many.</p>
+        </header>
+        
+<div class="mode-bar">
+  <div class="segmented" role="radiogroup" aria-label="Tatweel action">
+    <input type="radio" name="tatMode" id="tatAdd" value="add" checked>
+    <label for="tatAdd">Add kashida</label>
+    <input type="radio" name="tatMode" id="tatRemove" value="remove">
+    <label for="tatRemove">Remove kashida</label>
+  </div>
+  <div class="segmented" id="lengthOptions" role="radiogroup" aria-label="Tatweel length">
+    <input type="radio" name="tatLength" id="len1" value="1" checked><label for="len1">1 mark</label>
+    <input type="radio" name="tatLength" id="len3" value="3"><label for="len3">3 marks</label>
+    <input type="radio" name="tatLength" id="len5" value="5"><label for="len5">5 marks</label>
+  </div>
+  <span class="buffer-chip" id="tatCountChip" hidden></span>
+</div>
+<div class="split">
+  <div class="field">
+    <label for="inputBox">Original text</label>
+    <textarea class="editor editor--ar editor--tall" id="inputBox" dir="rtl" lang="ar" spellcheck="false" placeholder="العربية لغة جميلة"></textarea>
+  </div>
+  <div class="field">
+    <div class="split-label"><span>Stretched text</span></div>
+    <textarea class="editor editor--ar editor--tall" id="outputBox" dir="rtl" lang="ar" readonly placeholder="النتيجة تظهر هنا…"></textarea>
+  </div>
+</div>
+<div class="toolbar">
+  <button class="btn btn-outline" type="button" data-action="copy">Copy result</button>
+  <button class="btn btn-ghost" type="button" data-action="clear">Clear</button>
+  <span class="grow"></span>
+  <span class="tool-status" id="tatweelStatus" role="status" aria-live="polite"></span>
+</div>
+<div class="note-box"><p>Kashida is added only after letters that can connect to the next letter, so the word stays typographically valid.</p></div>
+        <p class="privacy-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Everything runs locally in your browser. Nothing is uploaded to a server.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container content-layout">
+    <article class="prose" id="guide">
+      
+<p>Tatweel, also called kashida, is the horizontal line that extends a connection between two Arabic letters. Typographers use it to justify a line, balance a heading, or give a logo a deliberate rhythm. In Unicode it is the character U+0640, and it is a real character rather than a font feature, which means it survives copy and paste but can also accumulate in text where it was never intended.</p>
+<p>This tool does two jobs: it inserts kashida only where a letter can legally connect to the next one, or it removes every tatweel character from a block of text.</p>
+
+<h2 id="what-is-kashida">What kashida can and cannot do</h2>
+<p>Arabic letters connect on a baseline. Some letters connect only to the preceding letter, not to the following one: <span class="ar-inline">ا</span>, <span class="ar-inline">د</span>, <span class="ar-inline">ذ</span>, <span class="ar-inline">ر</span>, <span class="ar-inline">ز</span>, <span class="ar-inline">و</span>, and a few others. You cannot stretch after those letters without breaking the word. The tool checks the next letter and inserts kashida only after a connecting letter, so <span class="ar-inline">بيت</span> can be stretched between <span class="ar-inline">ب</span> and <span class="ar-inline">ي</span>, but <span class="ar-inline">دار</span> cannot be stretched between <span class="ar-inline">د</span> and <span class="ar-inline">ا</span>.</p>
+<p>The result is typographically valid but not a replacement for a proper justification engine. A layout program distributes kashida with aesthetic rules; this tool applies a mechanical, even insertion.</p>
+
+<h2 id="add">Adding kashida</h2>
+<p>Choose one, three, or five marks per join. One mark is subtle and works for body text. Three or five marks create a visible stretch for a title or a poster. The converter removes any existing tatweel before adding new marks, so repeated clicks do not multiply the length.</p>
+<p>Harakat are preserved and stay attached to their letter. The insertion happens after any marks, so a fatha is not separated from its consonant by the stretch.</p>
+
+<h2 id="remove">Removing kashida</h2>
+<p>Switch to Remove and the output drops every U+0640 character. This is useful for text copied from a justified PDF, where the kashida used for alignment becomes visible garbage in a new layout, or for search fields where the extra character prevents a match. Removing tatweel does not change the letters or the meaning.</p>
+
+<h2 id="when-to-use">When to stretch and when not</h2>
+<ul>
+  <li><strong>Headlines and logotypes:</strong> a controlled stretch can make a short Arabic title fill its line.</li>
+  <li><strong>Print justification:</strong> for a paragraph, prefer the justification engine in InDesign or a CSS text-align setting. Manual kashida in body text quickly looks uneven.</li>
+  <li><strong>Formal documents:</strong> avoid it. Modern Arabic typesetting rarely uses manual kashida in contracts or reports.</li>
+  <li><strong>Cleanup:</strong> remove it when a PDF export leaves visible gaps or when a search fails on an otherwise identical word.</li>
+</ul>
+
+<h2 id="copy">Copying the result</h2>
+<p>The output updates live. Press Copy and paste into your design or document. Tatweel is a normal Unicode character, so it displays in any Arabic font, though the visual length depends on the font's design. Check the result in the final font before approving a print file.</p>
+<div class="callout"><p><strong>Accessibility note:</strong> screen readers may read tatweel as a pause or ignore it. Do not use it to fake spacing in a sentence that will be read aloud.</p></div>
+      <div class="article-dates">
+    <span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Published <time datetime="2026-10-26">October 26, 2026</time></span>
+    <span>Updated <time datetime="2026-11-05">November 5, 2026</time></span>
+  </div>
+    </article>
+    <aside class="toc" aria-label="On this page">
+    <p class="toc-title"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg> On this page</p>
+    <ol><li><a href="#what-is-kashida">What kashida can and cannot do</a></li><li><a href="#add">Adding kashida</a></li><li><a href="#remove">Removing kashida</a></li><li><a href="#when-to-use">When to stretch and when not</a></li><li><a href="#copy">Copying the result</a></li></ol>
+  </aside>
+  </section>
+
+  <div class="container">
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+    <div class="section-heading">
+      <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg> Quick answers</p>
+      <h2 id="faq-title">Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary><span>What is tatweel or kashida?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>It is the horizontal line that stretches the connection between two Arabic letters. In Unicode it is U+0640. Typographers use it to justify lines and balance short headings.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Why are some letters not stretched?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>Letters such as ا, د, ذ, ر, ز, and و do not connect to the following letter. Inserting kashida after them would break the word, so the tool skips those positions.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Can I remove existing tatweel?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>Yes. Choose Remove kashida. Every U+0640 character is deleted while letters, harakat, and punctuation remain.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Does the tool preserve harakat?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>Yes. Marks stay attached to their letter, and the kashida is inserted after them so the vowel is not separated from the consonant.</p></div>
+      </details><details class="faq-item">
+        <summary><span>Is manual kashida good for body text?</span><svg class="icon faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="faq-answer"><p>Usually not. Use the justification engine of your layout program for paragraphs. Manual kashida is best for short headings, logos, and deliberate display typography.</p></div>
+      </details>
+    </div>
+  </section>
+    <section class="related-section" aria-labelledby="related-title">
+    <div class="section-heading">
+      <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg> Keep going</p>
+      <h2 id="related-title">Related Arabic tools</h2>
+    </div>
+    <div class="tool-grid tool-grid--related">
+      <a class="tool-tile" href="/arabic-text-cleaner/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m14 4 6 6M12.5 8.5 4 17v3h3l8.5-8.5M13 7l4 4M7 14l3 3M5 21h11"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Arabic Text Cleaner</span>
+      <span class="tool-tile-desc">Collapse spaces, fix line breaks, and correct Arabic punctuation.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a><a class="tool-tile" href="/arabic-harakat-remover/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 21-4-4L14 6a2 2 0 0 1 3 0l4 4a2 2 0 0 1 0 3L11 21H7Z"/><path d="M11 21h10"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Harakat Remover</span>
+      <span class="tool-tile-desc">Strip tashkeel marks from Arabic while keeping every letter.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a><a class="tool-tile" href="/photoshop-text-fixer/">
+    <span class="tool-tile-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 1.8 4.2L18 9l-4.2 1.8L12 15l-1.8-4.2L6 9l4.2-1.8L12 3ZM19 14l.9 2.1L22 17l-2.1.9L19 20l-.9-2.1L16 17l2.1-.9L19 14ZM5 3l.6 1.4L7 5l-1.4.6L5 7l-.6-1.4L3 5l1.4-.6L5 3Z"/></svg></span>
+    <span class="tool-tile-body">
+      <span class="tool-tile-title">Photoshop Text Fixer</span>
+      <span class="tool-tile-desc">Turn disconnected Arabic letters into joined forms for design apps.</span>
+    </span>
+    <svg class="icon tool-tile-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+  </a>
+    </div>
+  </section>
+  </div>
+</main>
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand--footer" href="/">
+          <span class="brand-mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M9 14h6"/></svg></span>
+          <span class="brand-text">Arabic<b>Keyboard</b></span>
+        </a>
+        <p>Free Arabic typing and text tools that run in your browser.</p>
+        <p class="footer-note"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> Your text never leaves your device.</p>
+      </div>
+      <div class="footer-col">
+    <p class="footer-title">Keyboards</p>
+    <a href="/darija-keyboard/">Darija Keyboard</a><a href="/persian-keyboard/">Persian Keyboard</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Clean &amp; fix</p>
+    <a href="/arabic-text-cleaner/">Arabic Text Cleaner</a><a href="/arabic-punctuation-converter/">Punctuation Converter</a><a href="/photoshop-text-fixer/">Photoshop Text Fixer</a><a href="/arabic-harakat-remover/">Harakat Remover</a><a href="/arabic-tatweel-stretcher/">Tatweel Stretcher</a><a href="/find-and-replace/">Find and Replace</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Convert</p>
+    <a href="/tafqit/">Tafqit Converter</a><a href="/arabic-braille-translator/">Arabic Braille Translator</a><a href="/arabic-numerals-converter/">Arabic Numerals Converter</a><a href="/arabic-url-encoder/">Arabic URL Encoder</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Analyze</p>
+    <a href="/alphabetical-sorter/">Arabic Alphabetical Sorter</a><a href="/arabic-text-extractor/">Arabic Text Extractor</a><a href="/arabic-word-counter/">Word and Character Counter</a><a href="/arabic-word-frequency/">Word Frequency Counter</a>
+  </div><div class="footer-col">
+    <p class="footer-title">Generate &amp; listen</p>
+    <a href="/arabic-lorem-ipsum/">Arabic Lorem Ipsum</a><a href="/arabic-text-to-speech/">Arabic Text to Speech</a>
+  </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Arabic Keyboard Online. Free to use.</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="/#tools">All tools</a>
+      </div>
+    </div>
+  </footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/tools/tatweel.js" defer></script>
+</body>
+</html>
