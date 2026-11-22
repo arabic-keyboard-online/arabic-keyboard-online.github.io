@@ -553,7 +553,7 @@ const tts = {
   lede: 'Hear your Arabic text read aloud by the best voice on your device, at the speed you choose.',
   eyebrow: 'Listen to Arabic',
   published: '2026-10-07',
-  modified: '2026-10-30',
+  modified: '2026-11-22',
   keywords: ['Arabic text to speech', 'Arabic TTS', 'listen to Arabic', 'Arabic voice reader'],
   ui: ttsUi,
   scripts: ['tools/tts.js'],
@@ -587,6 +587,7 @@ const tts = {
 
 <h2 id="uses">Good uses</h2>
 <p>Listen to a paragraph before publishing to catch a missing word. Use it to practice listening comprehension with a short news text. For a presentation, hear how long a script takes at a normal speed. For a language learner, slow the rate down and repeat a sentence until the rhythm is familiar.</p>
+<p>If you need the opposite direction, dictating Arabic with your voice instead of listening to it, the <a href="https://www.speech-typing.com/p/alkitabat-alsawtia.html">Arabic voice typing tool</a> converts speech to text in the browser.</p>
 <div class="callout"><p><strong>Not a replacement for a human reader:</strong> synthesized Arabic can misplace stress and pause at the wrong place. Use it as a checking tool, not as a final voice-over.</p></div>`,
   faq: [
     {
